@@ -2,6 +2,7 @@ import "../src/style.css";
 import { first_page } from "./entry_page";
 import { add_anything } from "./add_Tasks";
 import { project } from "./add_project.js";
+import {utilities} from './utils.js';
 
 class interface_handling
 {
