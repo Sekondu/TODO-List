@@ -1,0 +1,222 @@
+body{
+    margin:0;
+    height:100vh;
+    font-family: "Radio Canada", sans-serif;
+    position:relative; 
+}
+button{
+    cursor:pointer;
+}
+.main_container{
+    display:grid;
+    grid-template-areas:
+    "dashboard body";
+    height:100%;
+    grid-template-columns:2fr 6fr;
+    transition:grid-template-columns 0.8s ease-in-out;
+    gap:0;
+}
+.dashboard{
+    grid-area:"dashboard";
+    display:flex;
+    flex-direction: column;
+    gap:80px;
+    background-color: #343148ff;
+    color:#d7c49eff;
+    padding-left: 20px;
+}
+#profile_pic{
+    width:20px;
+    aspect-ratio: 1;
+    margin-right:5px;
+    vertical-align: middle;
+}
+.dashboard_collapse{
+grid-template-columns: 0.5fr 6fr;
+}
+.dashboard-header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.collapsed{
+    gap:5px;
+}
+.dashboard-header>.btn{
+    justify-self: end;
+    margin-right: 10px;
+
+}
+.dashboard-buttons{
+    display:flex;
+    flex-direction: column;
+    align-self: start;
+    gap:50px;
+}
+.dashboard-buttons>*{
+    position:relative;
+    background-color: transparent;
+    border:none;
+    text-align: start;
+    font-size:20px;
+}
+.dashboard-buttons>*::after{
+    content:"";
+    position:absolute;
+    width:0;
+    bottom:0;
+    left:50%;
+    height:2px;
+    background:#d7c49eff;
+    transition:width 0.3s ease,left 0.3s ease;
+}
+.dashboard-buttons>*:hover::after{
+    width:100%;
+    left:0;
+}
+.body{
+    grid-area:"body";
+    display:flex;
+    flex-direction: column;
+    gap:30px;
+    background-color: #d7c49eff;
+    padding-left:100px;
+    color:#343148ff;
+}
+.default>h2{
+    border-bottom:2px solid grey;
+    height:50px;
+}
+.default>button{
+opacity:0.6;
+font-size: 20px;
+border:1px solid grey;
+border-radius:10px;
+}
+.All_Projects>button{
+opacity:0.6;
+font-size: 20px;
+border:1px solid grey;
+border-radius:10px;
+}
+.All_Projects>*{
+    margin-bottom:50px;
+}
+.projects_container>h2{
+    border-bottom:2px solid grey;
+    height:50px; 
+}
+.form-style{
+    display:grid;
+    grid-template-areas: 
+    ". . cancel"
+    "name_label name_label ."
+    "name name name"
+    "desc_label desc_label ."
+    "desc desc desc"
+    "date_label . priority_label"
+    "date . priority"
+    ". . submit";
+    grid-template-columns: 1fr 1fr 1fr;
+    height:500px;
+    gap:20px;
+    width:60%;
+    text-align: start;
+    background-color: #343148ff;
+    color:#d7c49eff;
+    border-radius:10px;
+    box-shadow: 0 0 10px 0.5rem grey;
+    backdrop-filter: blur(20px);
+    padding-left:10px;
+    padding-right:10px;
+    margin-top:30px;
+}
+.task-container{
+    display:flex;
+    background-color: white;
+    margin-bottom:10px;
+    padding-left:10px;
+    border-radius: 10px;
+    justify-content: space-around;
+    position:relative;
+    width:90%;
+    background-color:#343148ff;
+    color:#d7c49eff;
+}
+.task-container::after{
+    content:'';
+    left:0;
+    top:0;
+    position:absolute;
+    height:100%;
+    border-radius: 50px 0 0 50px;
+    width:15px;
+}
+.low::after{
+    background-color: #1da462;
+}
+.medium::after{
+    background-color: #ffcd46;
+}
+.high::after{
+    background-color: #dd5144;
+}
+.delete_task_form{
+    position:absolute;
+    display:grid;
+    grid-template-areas: 
+    ". . cancel"
+    "message message ."
+    ". cancel2 accept";
+    grid-template-columns: 3fr 1fr 1fr;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    height:300px;
+    width:500px;
+    align-items: start;
+    justify-content: center;
+    background-color: #343148ff;
+    color:#d7c49eff;
+    border-radius:15px;
+    padding:10px;
+}
+.project_form{
+    display:grid;
+    grid-template-areas: 
+    ". . cancel"
+    "label . ."
+    "input input ."
+    ". . confirm";
+    grid-template-columns: 1fr 1fr 1fr;
+    width:60%;
+    height:150px;
+    background-color: #343148ff;
+    color:#d7c49eff;
+    border-radius:10px;
+    padding:10px;
+    box-shadow: 0 0 10px 0.5rem grey;
+}
+.project_container{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+}
+.project_container::after{
+    content:"";
+    position:absolute;
+    top:100%;
+    left:0;
+    width:90%;
+    height:1px;
+    background-color: #343148ff;
+}
+.project_container>*{
+    margin-bottom:10px;
+}
+.project_data{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+}
